@@ -1,13 +1,12 @@
 package com.github.phoswald.html.tool;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class HtmlToolTest {
@@ -47,7 +46,6 @@ class HtmlToolTest {
         assertEqualTextFiles(expected, actual);
     }
 
-    @Disabled // whitespaces differ
     @Test
     void normalize_normalizedHtml_unchanged() throws IOException {
         // Arrange
@@ -63,7 +61,6 @@ class HtmlToolTest {
         assertEqualTextFiles(input, actual);
     }
 
-    @Disabled // whitespaces differ
     @Test
     void normalize_normalizedXml_unchanged() throws IOException {
         // Arrange
@@ -84,6 +81,6 @@ class HtmlToolTest {
     private void assertEqualTextFiles(Path expectedFile, Path actualFile) throws IOException {
         String expectedText = String.join("\n", Files.readAllLines(expectedFile));
         String actualText = String.join("\n", Files.readAllLines(actualFile));
-        assertTrue(expectedText.equals(actualText), () -> "Files differ: " + expectedFile + ", " + actualFile);
+        assertEquals(expectedText, actualText);
     }
 }
