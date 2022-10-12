@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class HtmlToolTest {
@@ -46,6 +47,7 @@ class HtmlToolTest {
         assertEqualTextFiles(expected, actual);
     }
 
+    @Disabled
     @Test
     void normalize_normalizedHtml_unchanged() throws IOException {
         // Arrange
@@ -61,6 +63,7 @@ class HtmlToolTest {
         assertEqualTextFiles(input, actual);
     }
 
+    @Disabled
     @Test
     void normalize_normalizedXml_unchanged() throws IOException {
         // Arrange
