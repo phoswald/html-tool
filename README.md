@@ -9,7 +9,7 @@ $ java -cp "target/html-tool.jar:target/dependency/*" com.github.phoswald.html.t
 $ docker run -it --rm \
   -v $(pwd)/target:/target \
   -w /target \
-  ghcr.io/graalvm/native-image:22.2.0 \
+  ghcr.io/graalvm/native-image:22.3.0 \
   -cp "html-tool.jar:dependency/*" com.github.phoswald.html.tool.HtmlTool html-tool
 $ ./target/html-tool
 
